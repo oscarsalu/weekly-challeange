@@ -15,7 +15,7 @@
 <body>
     <section>
         <header class='header'>
-            <nav>
+            <nav id="nav">
                 <div class="title-bar" data-responsive-toggle="menunav" data-hide-for="medium">
                     <button class="menu-icon" type="button" data-toggle="menunav"></button>
                     <div class="title-bar-title">Menu</div>
@@ -32,26 +32,28 @@
                     <div class="top-bar-right">
                         <ul class='menu'>
                             <li>
-                                <a href="#home">HOME</a>
+                                <a class="button secondary" id="butonblackit" href="#home">HOME</a>
                             </li>
                             <li>
-                                <a href="#abou">ABOUT</a>
+                                <a class="button secondary" id="butonblackit" href="#abou">ABOUT</a>
                             </li>
                             <li>
-                                <a href="#amenities">AMENITIES</a>
+                                <a class="button secondary" id="butonblackit" href="#amenities">AMENITIES</a>
                             </li>
                             <li>
-                                <a href="#nesw">NEWS</a>
+                                <a class="button secondary" id="butonblackit" href="#nesw">NEWS</a>
                             </li>
                             <li>
-                                <a href="#lifestyle">LIFESTYLE</a>
+                                <a class="button secondary" id="butonblackit" href="#lifestyle">LIFESTYLE</a>
                             </li>
                             <li>
-                                <a href="#contact">CONTACT</a>
+                                <a class="button secondary" id="butonblackit" href="#contact">CONTACT</a>
+                            </li>
+                            <li id="brown">
+                                <a class="button secondary" id="buy" href="#button">BUY/INVEST</a>
                             </li>
                         </ul>
                     </div>
-                </div>
                 </div>
             </nav>
         </header>
@@ -149,19 +151,10 @@
                         </ul>
                     </div>
                     <nav class="orbit-bullets">
-                        <button class="is-active" data-slide="0">
-                            <span class="show-for-sr">First slide details.</span>
-                            <span class="show-for-sr">Current Slide</span>
-                        </button>
-                        <button data-slide="1">
-                            <span class="show-for-sr">Second slide details.</span>
-                        </button>
-                        <button data-slide="2">
-                            <span class="show-for-sr">Third slide details.</span>
-                        </button>
-                        <button data-slide="3">
-                            <span class="show-for-sr">Fourth slide details.</span>
-                        </button>
+                        <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+                        <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+                        <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
+                        <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
                     </nav>
                 </div>
             </div>
@@ -217,21 +210,26 @@
             <div class='large-7 middle-7 cell'>
                 <h3>Floor Plans: Two BedRoom</h3>
                 <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make</h5>
-                <br>
+                <br><br>
                 <div class="grid-x">
-                    <div class="small-6 cell"><b>VIEW FLOOR PLANS </b></div>
-                    <div class="small-6 cell"><a class="button secondary" id="butonblack" href="#">VIEW FLOOR PLANS</a></div>
+                    <div class="small-6 cell"><a class="button secondary" id="butonblackit" href="#">VIEW FLOOR PLANS</a></div>
+                    <div class="small-6 cell"><a class="button secondary" id="butonblack" href="#">OTHER FLOOR PLANS</a></div>
                 </div>
             </div>
         </div>
     </div>
     <section class="thirdimage">
-
+        <div class="grid-x">
+            <div class="small-6 cell">
+                <h1 id="headingcolor">Let us maximize<br> your investment</h1>
+                <h3 id="contactcolor">Contact us</h3>
+            </div>
+            <div class="small-6 cell"></div>
+        </div>
     </section>
-    <br>
-    <br>
-    <section>
-
+    <section class='bottom'>
+        <h2 class='align'>People We work With</h2>
+        <img class="iamgecover" src="assets/media/image/bottom.jpg">
     </section>
 
 
