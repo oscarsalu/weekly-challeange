@@ -285,9 +285,7 @@
      /* width: 600px; */
      object-fit: cover;
      height: 300px;
- }
- 
- //  video style
+ } //  video style
  @import 'video.scss';
  /* style image */
  
@@ -347,17 +345,16 @@
      text-align: left;
  }
  
- .bottom {
-     max-width: 100%;
-     height: auto;
-     background-repeat: no-repeat;
-     background-size: cover;
-     background-color: rgba(238, 236, 236, 0.911);
- }
- 
  .iamgecover {
      max-width: 100%;
      height: auto;
+ }
+ 
+ .bottom {
+     @extend .iamgecover;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-color: rgba(238, 236, 236, 0.911);
  }
  
  .lastsection {
