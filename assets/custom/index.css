@@ -441,3 +441,9 @@
  #check {
      text-align: center;
  }
+ 
+ .footcontent {
+     width: 200px;
+     padding: 25px;
+     margin: 25px;
+ }
