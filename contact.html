@@ -21,7 +21,7 @@
                     <div class="title-bar-title">Menu</div>
                 </div>
 
-                <div class="top-bar" id="menunav">
+                <div class="top-bar largescreen" id="menunav">
                     <div class="top-bar-left">
                         <ul class="menu">
                             <li>
@@ -102,7 +102,7 @@
     <hr>
     <section>
         <div class="content">
-            <h2>Overview</h2>
+            <h2 id="overview">Overview</h2>
             <div class='grid-x grid-padding-x'>
                 <div class='large-6 middle-6 cell'>
                     <!-- Aligned to the left -->
@@ -162,8 +162,11 @@
             </div>
         </div>
     </section>
-    <div class="videocontainer" id="videodiv">
-        <video width="100%" height="" src="assets/media/video/video.mp4"></video>
+    <div class="video-wrapper" id="videodiv">
+        <video width="100%" height="400px">
+<source  src="assets/media/video/video.mp4">
+    </video>
+        <!-- <iframe width="100%" height="400px" src="assets/media/video/video.mp4" frameborder='0' allowfullscreen='allowfullscreen' autoplay=false></iframe> -->
     </div>
     <div class="content">
         <div class="orbit" id="thirdorbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
@@ -178,6 +181,7 @@
                             <div class="grid-x grid-padding-x align-left">
                                 <div class="medium-6 large-6 cell">
                                     <h3>Contemporary Design</h3>
+                                    <br>
                                     <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
                                         to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s</h5>
                                 </div>
@@ -192,6 +196,7 @@
                             <div class="grid-x grid-padding-x">
                                 <div class="medium-6 large-6 cell">
                                     <h3>Contemporary Design</h3>
+                                    <br>
                                     <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
                                         to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s</h5>
                                 </div>
@@ -211,6 +216,7 @@
             </div>
             <div class='large-7 middle-7 cell'>
                 <h3>Floor Plans: Two BedRoom</h3>
+                <br>
                 <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make</h5>
                 <br><br>
                 <div class="grid-x">
@@ -230,8 +236,13 @@
         </div>
     </section>
     <section class='bottom'>
-        <h2 class='align'>People We work With</h2>
-        <img class="iamgecover" src="assets/media/image/bottom.jpg">
+        <h2 class='align'>People we work with</h2>
+        <div class="grid-x grid-padding-x">
+            <div class="small-3 cell"><img src="assets/media/image/standard.jpg" alt=""></div>
+            <div class="small-3 cell"><img src="assets/media/image/stanbic.jpg" alt=""></div>
+            <div class="small-3 cell"><img src="assets/media/image/barclays.jpg" alt=""></div>
+            <div class="small-3 cell"><img src="assets/media/image/cba.jpg" alt=""></div>
+        </div>
     </section>
     <section class="lastsection">
         <header>
@@ -240,19 +251,19 @@
         <div class="grid-x" id="box">
             <div class="small-4 cell" id="image1">
                 <h2>AMARA RIDGE</h2>
-                <h5>exclusive private gated community in karen</h5>
+                <p>exclusive private gated community in karen</p>
                 <br>
                 <h4>VISIT WEBSITE</h4>
             </div>
             <div class="small-4 cell" id="image2">
                 <h2>SITU VILLAGE</h2>
-                <h5>exclusive private gated community in karen</h5>
+                <p>exclusive private gated community in karen</p>
                 <br>
                 <h4>VISIT WEBSITE</h4>
             </div>
             <div class="small-4 cell" id="image3">
                 <h2>THE ALMA</h2>
-                <h5>exclusive private gated community in karen</h5>
+                <p>exclusive private gated community in karen</p>
                 <br>
                 <h4>VISIT WEBSITE</h4>
             </div>
@@ -272,7 +283,7 @@
     </div>
     <script>
         var videoPlayButton,
-            videoWrapper = document.getElementsByClassName('videocontainer')[0],
+            videoWrapper = document.getElementsByClassName('video-wrapper')[0],
             video = document.getElementsByTagName('video')[0],
             videoMethods = {
                 renderVideoPlayButton: function() {
@@ -284,12 +295,10 @@
 
                 formatVideoPlayButton: function() {
                     videoWrapper.insertAdjacentHTML('beforeend',
-                        '\
-                            <div class="video-overlay-play-button" alt="Play video">\
-                                <div class="play">\
-                                </div><p>Watch Video</p>\
-                            </div>\
-                        '
+                        `<svg class="video-overlay-play-button" viewBox="0 0 200 200" alt="Play video">
+                            <circle cx="100" cy="100" r="90" fill="none" stroke-width="15" stroke="#fff" />
+                            <polygon points="70, 55 70, 145 145, 100" fill="#fff" />
+                        </svg>`
                     )
                 },
 

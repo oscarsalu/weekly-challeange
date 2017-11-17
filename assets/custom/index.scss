@@ -1,6 +1,31 @@
+ @mixin gradient($arg1, $arg2) {
+     background: -webkit-linear-gradient($arg1, $arg2);
+     background: -o-linear-gradient($arg1, $arg2);
+     background: -moz-linear-gradient($arg1, $arg2);
+     background: linear-gradient($arg1, $arg2);
+ }
+ 
+ @mixin bottomimage($arg1) {
+     max-width: 100%;
+     height: 300px;
+     background-image: url($arg1);
+     background-repeat: no-repeat;
+     background-size: cover;
+     opacity: 0.6;
+     color: white;
+     text-align: center;
+ }
+ 
+ $font: proxima-nova,
+ "Proxima Nova",
+ "Helvetica Neue",
+ Helvetica,
+ Roboto,
+ Arial,
+ sans-serif;
  body {
      background-color: #fff;
-     font-family: proxima-nova, "Proxima Nova", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+     font-family: $font;
      font-style: normal;
      font-weight: 300;
  }
@@ -21,7 +46,7 @@
  
  .top-bar,
  .top-bar ul {
-     background-color: #ffffff!important;
+     background-color: #fff!important;
  }
  
  #overview {
@@ -37,7 +62,7 @@
  /* describe the font of h1 that is the child of the header (css combinators) */
  
  h5 {
-     font-family: proxima-nova, "Proxima Nova", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+     font-family: $font;
      text-align: justify;
  }
  
@@ -99,15 +124,7 @@
      text-align: center;
      height: 300px;
      background: rgb(0, 0, 0);
-     /* For browsers that do not support gradients */
-     background: -webkit-linear-gradient(rgb(0, 0, 0), rgb(1, 70, 64));
-     /* For Safari 5.1 to 6.0 */
-     background: -o-linear-gradient(rgb(0, 0, 0), rgb(1, 70, 64));
-     /* For Opera 11.1 to 12.0 */
-     background: -moz-linear-gradient(rgb(0, 0, 0), rgb(1, 70, 64));
-     /* For Firefox 3.6 to 15 */
-     background: linear-gradient(rgb(0, 0, 0), rgb(1, 70, 64));
-     /* Standard syntax */
+     @include gradient(rgb(0, 0, 0), rgb(1, 70, 64));
  }
  
  p {
@@ -270,55 +287,8 @@
      height: 300px;
  }
  
- #videodiv {
-     width: 100%;
-     height: 50%;
- }
- 
- .video-wrapper {
-     position: relative;
- }
- 
- .video-wrapper>video {
-     width: 100%;
-     vertical-align: middle;
- }
- 
- .video-wrapper>video.has-media-controls-hidden::-webkit-media-controls {
-     display: none;
- }
- 
- .video-overlay-play-button {
-     box-sizing: border-box;
-     width: 100%;
-     height: 100%;
-     padding: 10px calc(50% - 50px);
-     position: absolute;
-     top: 0;
-     left: 0;
-     display: block;
-     opacity: 0.95;
-     cursor: pointer;
-     background-image: linear-gradient(transparent, #000);
-     transition: opacity 150ms;
- }
- 
- .video-overlay-play-button:hover {
-     opacity: 1;
- }
- 
- .video-overlay-play-button.is-hidden {
-     display: none;
- }
- 
- .play {
-     background-position: center;
-     width: 0;
-     height: 0;
-     border-top: 60px solid transparent;
-     border-bottom: 60px solid transparent;
-     border-left: 60px solid rgb(255, 255, 255);
- }
+ //  video style
+ @import 'video.scss';
  /* style image */
  
  #simage {
@@ -332,7 +302,7 @@
  /* thirdimage  section*/
  
  .thirdimage {
-     background: linear-gradient(to bottom right, #4d42392d, #d48a009c), url(../media/image/real.jpg);
+     background: linear-gradient(to bottom right, '#4d42392d, #d48a009c'), url(../media/image/real.jpg);
      background-repeat: no-repeat;
      background-size: cover;
      text-align: center;
@@ -346,7 +316,7 @@
  }
  
  #butonblackit {
-     background-color: black;
+     @extend #butonblack;
      filter: invert(100%);
  }
  
@@ -395,36 +365,15 @@
  }
  
  #image1 {
-     max-width: 100%;
-     height: 300px;
-     background-image: url(../media/image/real.jpg);
-     background-repeat: no-repeat;
-     background-size: cover;
-     opacity: 0.6;
-     color: white;
-     text-align: center;
+     @include bottomimage('../media/image/real.jpg');
  }
  
  #image2 {
-     max-width: 100%;
-     height: 300px;
-     background-image: url(../media/image/real.jpg);
-     background-repeat: no-repeat;
-     background-size: cover;
-     opacity: 0.4;
-     color: white;
-     text-align: center;
+     @include bottomimage('../media/image/real.jpg');
  }
  
  #image3 {
-     max-width: 100%;
-     height: 300px;
-     background-image: url(../media/image/Maroon.jpg);
-     background-repeat: no-repeat;
-     background-size: cover;
-     opacity: 0.3;
-     color: white;
-     text-align: center;
+     @include bottomimage('../media/image/Maroon.jpg');
  }
  
  #inverse1 {
